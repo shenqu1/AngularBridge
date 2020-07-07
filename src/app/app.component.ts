@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Bridge} from './bridge';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bridge';
+
+  currentBridge: Bridge;
+
+  handleBridgeChange(bridge: Bridge): void {
+    console.log('handleBridgeChange', bridge);
+    this.currentBridge = bridge;
+  }
 }
