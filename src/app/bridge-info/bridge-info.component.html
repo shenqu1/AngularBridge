@@ -1,1 +1,9 @@
-<p>bridge-info works!</p>
+<div id="bridge-info">
+  <app-bridge-info-panel
+    *ngIf="bridge"
+    id="bridge-info-panel"
+    [bridge]="bridge"
+  ></app-bridge-info-panel>
+
+  <app-bridge-info-map id="leaflet-map"></app-bridge-info-map>
+</div>
