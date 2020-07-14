@@ -1,11 +1,10 @@
 <nav>
   <ul>
     <li
-    *ngFor="let bridge of bridges"
-    title="{{bridge.name | titlecase}}"
-    (click)="onBridgeSelected(bridge)"
+    *ngFor="let bridge of bridges; trackBy: trackByBridges"
+    routerLinkActive="selected"
     >
-    {{bridge.name | titlecase}}
+    <a [routerLink]="['/bridges', bridge.id]">{{bridge.name | titlecase}}</a>
   </li>
   </ul>
 </nav>

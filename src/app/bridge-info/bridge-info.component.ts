@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import {Subscription} from 'rxjs';
+
 import { Bridge } from '../bridge';
 
 @Component({
@@ -6,13 +9,23 @@ import { Bridge } from '../bridge';
   templateUrl: './bridge-info.component.html',
   styleUrls: ['./bridge-info.component.css']
 })
-export class BridgeInfoComponent implements OnInit {
+export class BridgeInfoComponent implements OnInit, OnDestroy {
 
-  @Input() bridge: Bridge;
+  bridge: Bridge;
+  paramSubscription: Subscription;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.paramSubscription = this.route.params.subscribe(
+      (params: Params) => console.log('bridge-info', params.id)
+    );
+  }
+
+  ngOnDestroy(): void {
+    if(this.paramSubscription) {
+      this.paramSubscription.unsubscribe();
+    }
   }
 
 }

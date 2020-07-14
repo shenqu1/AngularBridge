@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Bridge} from '../bridge';
 import {Bridges} from '../bridges';
 
@@ -11,13 +11,11 @@ export class MenuComponent implements OnInit {
 
   bridges: Array<Bridge> = Bridges;
 
-  @Output() bridgeSelected: EventEmitter<Bridge> = new EventEmitter();
 
   constructor() { }
 
-  onBridgeSelected(bridge: Bridge): void {
-    console.log('onBridgeSelected', bridge);
-    this.bridgeSelected.emit(bridge);
+  trackByBridges(index: number, bridge:Bridge): string {
+    return bridge.id;
   }
 
   ngOnInit(): void {
