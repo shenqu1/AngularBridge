@@ -7,12 +7,5 @@ import {Bridge} from './bridge';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bridge';
 
-  currentBridge: Bridge;
-
-  handleBridgeChange(bridge: Bridge): void {
-    console.log('handleBridgeChange', bridge);
-    this.currentBridge = bridge;
-  }
 }

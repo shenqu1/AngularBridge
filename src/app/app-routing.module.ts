@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BridgeInfoComponent } from './bridge-info/bridge-info.component';
 
-
+import {BridgeFormTemplateDrivenComponent} from './bridge-form-template-driven/bridge-form-template-driven.component';
 
 const routes: Routes = [
   {path: 'bridges/:id', component: BridgeInfoComponent},
   {path: 'bridges', component:BridgeInfoComponent},
+  {path: 'new-template', component: BridgeFormTemplateDrivenComponent},
   {path: '', redirectTo: 'bridges', pathMatch: 'full'}
 ];
 

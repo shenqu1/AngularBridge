@@ -1,0 +1,36 @@
+<form id="bridge-form-template" #bridgeForm='ngForm' (ngSubmit)="onSubmit(bridgeForm)">
+  <label for="bridge-id">ID</label>
+  <input type="text" id="bridge-id" name="id" placeholder="bridge-415-138-c" required autofocus [(ngModel)]="id" #bridgeId="ngModel">
+
+  <label for="bridge-name">Name</label>
+  <input type="text" id="bridge-name" name="name" required [(ngModel)]="name" #bridgeName="ngModel">
+
+  <label for="bridge-lat">Latitudes</label>
+  <input type="text" id="bridge-lat" name="lat" placeholder="49.686" required [(ngModel)]="lat" #bridgeLat="ngModel">
+
+  <label for="bridge-lng">Longitude</label>
+  <input type="text" id="bridge-lng" name="lng" placeholder="-92.4925" required [(ngModel)]="lng" #bridgeLng="ngModel">
+
+  <label for="bridge-year">Year</label>
+  <input type="text" id="bridge-year" name="year" placeholder="Four digit year" pattern="\s*[0-9]{4}\s*" required [(ngModel)]="year" #bridgeYear="ngModel">
+
+  <label for="bridge-width">Width</label>
+  <input type="text" id="bridge-width" name="width" placeholder="(Optional) width in metres" [(ngModel)]="width" #bridgeWidth="ngModel">
+
+  <label for="bridge-length">Length</label>
+  <input type="text" id="bridge-length" name="length" placeholder="(Optional) Length in metres" [(ngModel)]="length" #bridgeLength="ngModel">
+
+  <div class="button">
+    <input type="submit" id="bridge-submit" name="submit">
+  </div>
+</form>
+
+<div id="errors" *ngIf="bridgeForm.invalid && bridgeForm.touched">
+  <p *ngIf="bridgeId.invalid">An ID is required.</p>
+  <p *ngIf="bridgeName.invalid">A Name is required.</p>
+  <p *ngIf="bridgeLat.invalid">A Latitude is required.</p>
+  <p *ngIf="bridgeLng.invalid">A Longtitude is required.</p>
+
+  <p *ngIf="bridgeYear.errors?.required">A Year is required.</p>
+  <p *ngIf="bridgeYear.errors?.pattern">The Year must be four digits in length.</p>
+</div>
