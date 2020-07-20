@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { BridgeInfoComponent } from './bridge-info/bridge-info.component';
@@ -13,6 +16,8 @@ import { BridgeInfoPanelComponent } from './bridge-info-panel/bridge-info-panel.
 import { BridgeInfoMapComponent } from './bridge-info-map/bridge-info-map.component';
 import { BridgeFormTemplateDrivenComponent } from './bridge-form-template-driven/bridge-form-template-driven.component';
 import { BridgeFormReactiveComponent } from './bridge-form-reactive/bridge-form-reactive.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BridgeFormMaterialComponent } from './bridge-form-material/bridge-form-material.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +27,18 @@ import { BridgeFormReactiveComponent } from './bridge-form-reactive/bridge-form-
     BridgeInfoPanelComponent,
     BridgeInfoMapComponent,
     BridgeFormTemplateDrivenComponent,
-    BridgeFormReactiveComponent
+    BridgeFormReactiveComponent,
+    BridgeFormMaterialComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

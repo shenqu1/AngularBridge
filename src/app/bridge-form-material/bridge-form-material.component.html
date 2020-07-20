@@ -1,0 +1,41 @@
+<form id="bridge-form-material" [formGroup]="bridgeForm">
+
+  <mat-form-field>
+    <mat-label>ID</mat-label>
+    <input matInput type="text" id="bridge-id" name="id" placeholder="bridge-41S-138-C" autofocus formControlName="id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput type="text" id="bridge-name" name="name" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Latitudes</mat-label>
+    <input matInput type="text" id="bridge-lat" name="lat" placeholder="49.686" formControlName="lat">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Longitude</mat-label>
+    <input matInput type="text" id="bridge-lng" name="lng" placeholder="-92.4925" formControlName="lng">
+  </mat-form-field>
+
+  <mat-form-field hintLabel="Use 4-digit year">
+    <mat-label>Year</mat-label>
+    <input matInput type="text" id="bridge-year" name="year" placeholder="Four digit year" formControlName="year">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Width</mat-label>
+    <input matInput type="text" id="bridge-width" name="width" placeholder="(Optional) width in metres" formControlName="width">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Length</mat-label>
+    <input matInput type="text" id="bridge-length" name="length" placeholder="(Optional) Length in metres" formControlName="length">
+  </mat-form-field>
+
+</form>
+
+
+
